@@ -1,0 +1,10 @@
+.event-form-container {
+  /* max-width: 350px; */
+  /* width: 100vw; */
+}
+
+.event-form-error-message {
+  color: #f00;
+  font-size: 14px;
+  text-align: left;
+}

@@ -1,0 +1,9 @@
+.event-table-row:nth-child(2n-1) > td {
+  background-color: #ebf2ff;
+}
+
+.event-table-row > td {
+  padding: 8px 16px;
+  text-align: right;
+  font-size: 14px;
+}

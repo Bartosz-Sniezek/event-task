@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  server:
+    build: .
+    ports:
+      - 8080:8080
+    volumes: 
+      - ./src:/app/src
+      - /app/node_modules
+    env_file:
+      - ./env/dev.env
+    depends_on:
+      - mongodb
+    container_name: event-api-container
+
+  mongodb:
+    image: mongo
+    ports: 
+      - 27018:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example

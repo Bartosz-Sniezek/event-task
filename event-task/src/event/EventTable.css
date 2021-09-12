@@ -1,0 +1,15 @@
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.event-table > caption {
+  font-size: 24px;
+  padding: 16px 0;
+}
+
+.event-table-header-row > th {
+  padding: 4px 16px;
+  text-align: right;
+  font-weight: 500;
+}
