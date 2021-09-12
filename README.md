@@ -37,25 +37,89 @@ npm test
 ## Server
 Simple event adding endpoint
 
-#### Technologies
+### Technologies
 Server is made with:
 * TypeScript
 * InversifyJs
 * Express
 * Mongoose
 
-#### Requirements
+### Endpoints
+
+| method | endpoint | description |
+| ------ | ------ | ------ |  
+| POST | /api/events | creating new event
+| GET | /api/events | getting all events
+
+#### API errors
+All api errors have same structure
+##### example error
+```
+{
+   "message": "Missing 'firstName' field" 
+}
+```
+
+#### [POST] /api/events request body
+| field name | type | required |
+| ------ | ------ | ------ |  
+| firstName | string | true
+| lastName | string | true
+| emailAddress | string | true
+| eventTimestamp | number | true
+
+
+#### [POST] /api/events example request body
+```
+{
+    "firstName": "first name",
+    "lastName": "last name",
+    "emailAddress": "example@domain.com",
+    "eventTimestamp": 123436578
+}
+```
+#### [POST] /api/events example response
+```
+{
+    "id": "111111-4444-5555-6666-7777"
+    "firstName": "first name",
+    "lastName": "last name",
+    "emailAddress": "example@domain.com",
+    "eventTimestamp": 123436578
+}
+```
+#### [GET] /api/events example response
+```
+[
+    {
+        "id": "111111-4444-5555-6666-7777"
+        "firstName": "first name",
+        "lastName": "last name",
+        "emailAddress": "example@domain.com",
+        "eventTimestamp": 123436578
+    },
+    {
+        "id": "22222-4444-5555-6666-7777"
+        "firstName": "first name2",
+        "lastName": "last name2",
+        "emailAddress": "example2@domain.com",
+        "eventTimestamp": 1234365789
+    }
+]
+```
+
+### Requirements
 Application will need some environment variables in order to start.
 With docker-compose it will load them form file server/dev.env 
 With manual installation you will need to set them before running npm commands
 
 | variable | description
 | ------ | ------ |
-| PORT | port that is used to listen on |
+| PORT | server port |
 | MONGODB_URI | connection string for mongo db for production |
 | MONGODB_TEST_URI | connection string for mongo db for testing |
 
-## Starting with Docker
+### Starting with Docker
 By default, the Docker is exposing port 8080 and docker-compose is binding it to the same port on your local machine
 #### MongoDb
 docker-compose is building it's own service with MongoDb running. If you don't need it, comment out or remove it from docker-compose.yaml
@@ -83,7 +147,7 @@ Run tests
 ```
 docker exec -it event-api-container npm run test
 ```
-## Starting manually
+### Starting manually
 Install the dependencies
 ```
 npm run install
@@ -113,7 +177,3 @@ MONGODB_URI=mongodb://localhost:27017/event-api-testing npm test
 ```
 set MONGODB_URI=mongodb://localhost:27017/event-api-testing && npm test
 ```
-## License
-
-MIT
-
