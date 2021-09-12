@@ -113,7 +113,4 @@ MONGODB_URI=mongodb://localhost:27017/event-api-testing npm test
 ```
 set MONGODB_URI=mongodb://localhost:27017/event-api-testing && npm test
 ```
-## License
-
-MIT
 
