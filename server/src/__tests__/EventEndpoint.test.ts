@@ -62,7 +62,7 @@ describe("missing fields in POST /api/events request tests", () => {
     });
   
     expect(res.status).toBe(400);
-    expect(res.body.message).toBe("Missing 'firstName' property");
+    expect(res.body.message).toBe("Missing 'firstName' field");
   }); 
   
   it("should return 400 on POST /api/events with body.message 'Missing 'lastName' property' when 'lastName' field is missing in request body", async () => {
@@ -73,7 +73,7 @@ describe("missing fields in POST /api/events request tests", () => {
     });
   
     expect(res.status).toBe(400);
-    expect(res.body.message).toBe("Missing 'lastName' property");
+    expect(res.body.message).toBe("Missing 'lastName' field");
   }); 
   
   it("should return 400 on POST /api/events with body.message 'Missing 'emailAddress' property' when 'emailAddress' field is missing in request body", async () => {
@@ -84,7 +84,7 @@ describe("missing fields in POST /api/events request tests", () => {
     });
   
     expect(res.status).toBe(400);
-    expect(res.body.message).toBe("Missing 'emailAddress' property");
+    expect(res.body.message).toBe("Missing 'emailAddress' field");
   }); 
   
   it("should return 400 on POST /api/events with body.message 'Invalid email address' when 'emailAddress' field is invalid email address in request body", async () => {
@@ -107,7 +107,7 @@ describe("missing fields in POST /api/events request tests", () => {
     });
   
     expect(res.status).toBe(400);
-    expect(res.body.message).toBe("Missing 'eventTimestamp' property");
+    expect(res.body.message).toBe("Missing 'eventTimestamp' field");
   });
 });
 
