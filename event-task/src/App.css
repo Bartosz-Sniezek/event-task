@@ -40,6 +40,7 @@ html, body, .App {
 
 .error-container {
   color: #f00;
+  margin: 16px 0;
 }
 
 .app-header {
