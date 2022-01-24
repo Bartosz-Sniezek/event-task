@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { addEvent, getEvents } from "../api/events";
+import { getEvents } from "../api/events";
+import { Button } from "../components/ui/Button";
 import { Spinner } from "../components/ui/Spinner";
-import { Email } from "../core/Email";
-import { EventDate } from "../core/EventDate";
 import { EventDTO } from "../core/EventDTO";
-import { FirstName } from "../core/FirstName";
-import { LastName } from "../core/LastName";
 import { EventTable } from "../event/EventTable";
 import { getErrorMessage } from "../utils/getErrorMessage";
 
@@ -36,10 +33,11 @@ export function Events() {
   return (
     <div className="pos-relative view">
       <div>
-        <button onClick={loadEvents}>refresh</button>
+        <Button onClick={loadEvents} text="Refresh"/>
       </div>
-      {!loading && <EventTable items={events} />}
+      {events && <EventTable items={events} />}
       {loading && <Spinner />}
+      {error && <div className="error-container">{error}</div>}
     </div>
   );
 }
