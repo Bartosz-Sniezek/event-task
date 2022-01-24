@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import { getEvents } from "../api/events";
+import { addEvent, getEvents } from "../api/events";
 import { Spinner } from "../components/ui/Spinner";
+import { Email } from "../core/Email";
+import { EventDate } from "../core/EventDate";
 import { EventDTO } from "../core/EventDTO";
+import { FirstName } from "../core/FirstName";
+import { LastName } from "../core/LastName";
 import { EventTable } from "../event/EventTable";
 import { getErrorMessage } from "../utils/getErrorMessage";
 
@@ -34,7 +38,7 @@ export function Events() {
       <div>
         <button onClick={loadEvents}>refresh</button>
       </div>
-      {!loading && <EventTable items={events}/>}
+      {!loading && <EventTable items={events} />}
       {loading && <Spinner />}
     </div>
   );

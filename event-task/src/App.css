@@ -18,7 +18,36 @@ html, body, .App {
 }
 
 .App {
-  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+.custom-link {
+  display: inline-block;
+  color: #fff;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.route-active {
+  background-color: #fff;
+  color: #13a7ff;
+}
+
+.app-header {
+  flex: 0 0 auto;
+  justify-self: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: #13a7ff;
+  border-bottom: 1px solid #13a7ff;
+}
+
+.app-body {
+  padding: 16px;
 }
 
 .App-header {
